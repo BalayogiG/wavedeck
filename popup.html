@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { font: 14px system-ui, sans-serif; width: 290px; margin: 0; padding: 14px; }
+  label { display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; }
+  label + p { margin: 4px 0 14px; }
+  input { width: 40px; height: 22px; accent-color: #1a73e8; }
+  p { margin: 10px 0 0; color: #666; font-size: 12px; line-height: 1.4; }
+  #err { color: #c5221f; }
+</style>
+<label><b>Gesture control</b><input type="checkbox" id="gesture"></label>
+<p>Hold your hand in the <b>right</b> third of the camera view → next, <b>left</b> third → previous. Return to the middle to reset.</p>
+<label><span>Right hand only</span><input type="checkbox" id="right" checked></label>
+<p>Ignores your left hand so it can't change slides by accident.</p>
+<label><b>Voice control</b><input type="checkbox" id="voice"></label>
+<p>Say <b>"Jarvis, next"</b>, <b>"Jarvis, previous"</b>, <b>"Jarvis, go to slide five"</b>, <b>"Jarvis, first / last slide"</b>. Uses Chrome's speech recognition (audio is sent to Google).</p>
+<label><span>Require wake word "Jarvis"</span><input type="checkbox" id="wake" checked></label>
+<p>Both toggles apply to this tab only.</p>
+<p id="err"></p>
+<script src="popup.js"></script>

@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; height: 100%; background: #202124; overflow: hidden; }
+  video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  #dot { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+         background: #8ab4f8; opacity: 0; transition: opacity .15s; }
+  #msg { position: absolute; left: 6px; top: 6px; right: 6px; color: #fff; font: 11px system-ui; text-shadow: 0 0 3px #000; }
+  #zones { position: absolute; inset: 0; pointer-events: none;
+           background: linear-gradient(90deg, transparent 33%, rgba(255,255,255,.5) 33%, rgba(255,255,255,.5) calc(33% + 1px), transparent calc(33% + 1px), transparent calc(67% - 1px), rgba(255,255,255,.5) calc(67% - 1px), rgba(255,255,255,.5) 67%, transparent 67%); }
+  #flash { position: absolute; inset: 0; display: grid; place-items: center; font: 700 40px system-ui; color: #fff;
+           background: rgba(26,115,232,.55); opacity: 0; transition: opacity .3s; }
+</style>
+<video id="v" autoplay muted playsinline></video>
+<div id="msg">Starting camera…</div>
+<div id="zones"></div>
+<div id="dot"></div>
+<div id="flash"></div>
+<script type="module" src="tracker.js"></script>

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Wavedeck",
+  "version": "1.0.0",
+  "description": "Control HTML slide decks (Marp) with right-hand gestures or \"Jarvis\" voice commands. Toggle per tab.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Wavedeck",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "tracker.html",
+        "voice.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
